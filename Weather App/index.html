@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> 
+    <script src="https://kit.fontawesome.com/e4842a75fe.js" crossorigin="anonymous"></script>
+    <script src="js/script.js" defer></script>
+    <title>WeatherAPI</title>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <ion-icon name="location-sharp"></ion-icon>
+            <input type="text" placeholder="Enter Your Location" id="input">
+            <button class="search-btn"><ion-icon name="search"></ion-icon></button>
+        </div>
+        <div class="body-section">
+            <img src="" alt="" class="body-img">
+            <div class="description">
+                <div class="temperature-container">
+                    <p class="temperature"></p>
+                    <p class="simbol">°C</p>
+                </div>
+                <p class="climate"></p>
+            </div>
+        </div>
+        <div class="footer-section">
+            <div class="left">
+                <i class="fa-solid fa-wind" id="wind-img"></i>
+                <div class="wind-container">
+                    <p class="speed">6Km/h</p>
+                    <p class="speed-description">Wind Speed</p>
+                </div>
+             </div>
+            <div class="right">
+                <i class="fa-solid fa-water" id="humity-img"></i>
+                <div class="humity-container">
+                    <p class="humidity"></p>
+                    <p class="humidity-description">Humidity</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
