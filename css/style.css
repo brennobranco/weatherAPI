@@ -82,6 +82,7 @@ button{
     font-size: 20px;
     margin-top: 10px;
     font-weight: 500;
+    display: block;
 }
 .temperature{
     font-size: 3em;

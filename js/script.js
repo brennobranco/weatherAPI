@@ -14,28 +14,29 @@ const simbol = document.querySelector('.simbol')
 
 const fetchApi = async () => {
     const city = document.querySelector('#input').value
-    const responseApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
-    
-    const data = await responseApi.json() 
-    console.log(data)
     if(city == ''){
         return
     }
+    const responseApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
     
+    const data = await responseApi.json() 
+
     if(data.cod == 404){
+
         bodySection.style.display = 'flex'
         bodyImg.src = 'img/404.png'
         bodyClimate.innerHTML = 'Oops! Location Not Found!'
         footerSection.style.display = 'none'
         temperature.style.display = 'none'
-        simbol.style.dispay = 'none'
+        simbol.style.display = 'none'
     }else{
+        
+        simbol.style.display = 'block'
         temperature.style.display = 'flex'
         bodySection.style.display = 'flex'
         footerSection.style.display = 'flex'
         speed.innerHTML = data.wind.speed + 'Km/h'
         humidity.innerHTML = data.main.humidity + '%'
-        // bodyImg.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
         bodyImg.src = setCloud(data.weather[0].main)
         temperature.innerHTML = setTemperature(Math.round(data.main.temp).toString())
         climate.innerHTML = capitalizeFirtsLetter(data.weather[0].description)
